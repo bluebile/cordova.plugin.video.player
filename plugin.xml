@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="cordova.plugin.video.player"
+      version="1.0.0">
+
+    <name>VideoPlayer</name>
+    
+	<description>
+			Video player for wp8
+	</description>
+	<license>MIT</license>
+	<keywords>phonegap,cordova,windows phone 8,wp8,videoplayer</keywords>
+
+	<js-module src="www/player.js" name="VideoPlayer">
+	  <merges target="window.videoPlayer" />
+	</js-module>
+	
+	<!-- wp8 -->
+  <platform name="wp8">
+    <config-file target="config.xml" parent="/*">
+      <feature name="VideoPlayer">
+        <param name="wp-package" value="VideoPlayer"/>
+      </feature>
+      <Capability Name="ID_CAP_MEDIALIB" />
+    </config-file>
+   
+    <source-file src="src/wp/VideoPlayer.cs" />
+  </platform>
+	
+</plugin>
+
