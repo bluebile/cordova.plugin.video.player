@@ -10,6 +10,8 @@ using System.Collections;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using System.Windows.Input;
+using Windows.Storage;
+using Windows.ApplicationModel;
 
 namespace WPCordovaClassLib.Cordova.Commands
 {
@@ -25,7 +27,8 @@ namespace WPCordovaClassLib.Cordova.Commands
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
 
-                string destFile = System.IO.Path.Combine(ApplicationData.Current.LocalFolder.Path, url.Split('\\').Last());
+                string[] arrayStr = url.Split('\\');
+                string destFile = System.IO.Path.Combine(ApplicationData.Current.LocalFolder.Path, arrayStr[arrayStr.Length]);
                 System.IO.File.Copy(System.IO.Path.Combine(Package.Current.InstalledLocation.Path, url), destFile, true);
                 MediaPlayerLauncher mediaPlayerLauncher = new MediaPlayerLauncher();
 
