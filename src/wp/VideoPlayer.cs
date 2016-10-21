@@ -28,8 +28,9 @@ namespace WPCordovaClassLib.Cordova.Commands
             {
 
                 string[] arrayStr = url.Split('\\');
+                string wwwDir = "www\\";
                 string destFile = System.IO.Path.Combine(ApplicationData.Current.LocalFolder.Path, arrayStr[arrayStr.Length-1]);
-                System.IO.File.Copy(System.IO.Path.Combine(Package.Current.InstalledLocation.Path, url), destFile, true);
+                System.IO.File.Copy(System.IO.Path.Combine(Package.Current.InstalledLocation.Path, string.Concat(wwwDir, url)), destFile, true);
                 MediaPlayerLauncher mediaPlayerLauncher = new MediaPlayerLauncher();
 
                 mediaPlayerLauncher.Media = new Uri(destFile, UriKind.Relative);
