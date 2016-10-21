@@ -25,9 +25,11 @@ namespace WPCordovaClassLib.Cordova.Commands
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
 
+                string destFile = System.IO.Path.Combine(ApplicationData.Current.LocalFolder.Path, url.Split('\\').Last());
+                System.IO.File.Copy(System.IO.Path.Combine(Package.Current.InstalledLocation.Path, url), destFile, true);
                 MediaPlayerLauncher mediaPlayerLauncher = new MediaPlayerLauncher();
 
-                mediaPlayerLauncher.Media = new Uri(url, UriKind.RelativeOrAbsolute);
+                mediaPlayerLauncher.Media = new Uri(destFile, UriKind.Relative);
                 mediaPlayerLauncher.Location = MediaLocationType.Data;
                 mediaPlayerLauncher.Controls = MediaPlaybackControls.Pause | MediaPlaybackControls.Stop;
                 mediaPlayerLauncher.Orientation = MediaPlayerOrientation.Landscape;
