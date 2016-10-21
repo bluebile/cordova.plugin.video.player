@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-           id="cordova.plugin.video.player"
+           id="cordova.plugin.wp8.native-player"
       version="1.0.0">
 
     <name>VideoPlayer</name>
