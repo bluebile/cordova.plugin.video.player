@@ -3,7 +3,7 @@ Plugin to play video with native video player
 on Windows Phone 8.
 
 # Install
-  cordova plugin add http://github.com/jppradhan/cordova.plugin.video.player.git
+  cordova plugin add http://github.com/bluebile/wp8-native-player.git
 
 # How to use
 ```
